@@ -1,0 +1,21 @@
+{{ define "main" }}
+    <style>
+        .container { max-width: none !important; padding: 0 !important; }
+        .content { padding: 0 !important; }
+    </style>
+    <div class="content" style="height: calc(100vh - 60px); overflow: hidden;">
+        {{ .Content }}
+    </div>
+
+    {{/* Load JSX file if it exists for this page */}}
+    {{- $jsFileName := .Title | anchorize -}}
+    {{- $pathJS := (printf "%s%s%s" "js/posts/" $jsFileName ".js" ) -}}
+    {{- $pathJSX := (printf "%s%s%s" "js/posts/" $jsFileName ".jsx" ) -}}
+    {{- if (fileExists (printf "%s%s" "static/" $pathJS)) -}}
+    <script src="{{ $pathJS | absURL }}"></script>
+    {{- else if (fileExists (printf "%s%s" "static/" $pathJSX)) -}}
+    <script type="text/babel" data-presets="react">
+    {{ (printf "%s%s" "static/" $pathJSX) | readFile | safeHTML }}
+    </script>
+    {{- end -}}
+{{ end }}
