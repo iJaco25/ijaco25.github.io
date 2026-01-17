@@ -1,0 +1,53 @@
+baseURL = "http://localhost:1313/"
+languageCode = "en-us"
+title = "Hytale Documentation"
+theme = "hello-friend-ng"
+
+[params]
+  Author = ["Hytale Docs"]
+  description = "Documentation for Hytale development and modding"
+  homeSubtitle = "Guides, tutorials, and API reference for Hytale."
+  homeSubtitle2 = "Majority of APIs documentation is AI generated."
+
+
+
+  # Theme settings
+  dateform = "Jan 2, 2006"
+  dateformShort = "Jan 2"
+  dateformNum = "2006-01-02"
+  dateformNumTime = "2006-01-02 15:04"
+
+  # Navigation
+  enableThemeToggle = true
+
+  # Code highlighting
+  [params.highlight]
+    highlightjs = true
+    languages = ["javascript", "jsx", "json", "lua", "bash", "yaml"]
+
+[menu]
+  [[menu.main]]
+    identifier = "guides"
+    name = "Guides"
+    url = "/guides/"
+    weight = 10
+  [[menu.main]]
+    identifier = "api"
+    name = "API"
+    url = "/api/"
+    weight = 20
+  [[menu.main]]
+    identifier = "plugin"
+    name = "GUI Plugin"
+    url = "/plugin/"
+    weight = 30
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = false
+    noClasses = false

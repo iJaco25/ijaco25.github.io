@@ -1,0 +1,35 @@
+# Ignore everything
+*
+
+# But not these files/folders
+!.gitignore
+!hugo.toml
+!start_server.sh
+
+# Content
+!content/
+!content/**
+
+# Archetypes
+!archetypes/
+!archetypes/**
+
+# Assets
+!assets/
+!assets/**
+
+# Data
+!data/
+!data/**
+
+# Static
+!static/
+!static/**
+
+# Themes
+!themes/
+!themes/**
+
+# Claude config
+!.claude/
+!.claude/**
